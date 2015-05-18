@@ -18,7 +18,6 @@ GHApi = {
 		var events = gh.events.getFromUserPublic({
 			user: user,
 		});
-		console.log(events[0].type);
 		return events.filter(function(el){ return GHApi.isContribution(el) });
 	}	
 }

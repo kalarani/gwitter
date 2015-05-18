@@ -10,5 +10,8 @@ describe("Github api", function(){
 	it("Should check if creating issues is a contribution", function(){
 		var e = {type: "IssuesEvent", payload: {action: "opened"}}
 		expect(GHApi.isContribution(e)).toBe(true);
+
+		var e = {type: "IssuesEvent", payload: {action: "closed"}}
+		expect(GHApi.isContribution(e)).toBe(false);
 	});
 });
