@@ -1,3 +1,5 @@
+Devs = new Mongo.Collection("Developers");
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
@@ -19,5 +21,6 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
 	Migrations.migrateTo('latest');
+	GHApi.contributionsFrom("kalarani");
   });
 }

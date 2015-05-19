@@ -15,9 +15,19 @@ GHApi = {
 				"user-agent": "gwitter"
 			}
 		});
+		var dev = Devs.findOne({username: user}) || {};
 		var events = gh.events.getFromUserPublic({
 			user: user,
+			headers: {
+				"if-none-match": dev.etag
+			}
 		});
+		if(events.meta.status === "304 Not Modified"){
+			return [];
+		}
+		if(dev.etag !== events.meta.etag){
+			Devs.update({username: user}, {$set: {etag: events.meta.etag}});
+		}
 		return events.filter(function(el){ return GHApi.isContribution(el) });
 	}	
 }
