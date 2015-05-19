@@ -14,5 +14,9 @@ describe("Github api", function(){
 		var e = {type: "IssuesEvent", payload: {action: "closed"}}
 		expect(GHApi.isContribution(e)).toBe(false);
 	});
-	xit("make sure that no filtering happens if the response is a 304");
+	it("Should return emply list of contributions if server returns 304", function(){
+		spyOn(GHApi, 'getPublicEventsFor').and.returnValue({meta: {status: "304 Not Modified"}});
+
+		expect(GHApi.contributionsFrom("kalarani").length).toBe(0);
+	});
 });
