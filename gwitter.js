@@ -18,6 +18,6 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    GHApi.contributionsFrom("kalarani");
+	Migrations.migrateTo('latest');
   });
 }

@@ -11,3 +11,4 @@ sanjo:jasmine
 velocity:html-reporter
 bruz:github-api
 velocity:console-reporter
+percolate:migrations
