@@ -1,21 +1,12 @@
 Devs = new Mongo.Collection("Developers");
+Contributions = new Mongo.Collection("Contributions");
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+	Template.contributions.helpers({
+		contributions: function(){
+			return Contributions.find({}, {sort: {created_at: -1}});
+		}
+	});
 }
 
 if (Meteor.isServer) {
