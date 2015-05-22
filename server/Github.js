@@ -26,11 +26,10 @@ GHApi = {
 	contributionsFrom: function(user){
 		var dev = Devs.findOne({username: user}) || {};
 		var events = GHApi.getPublicEventsFor(dev);
-		if(events.meta.status === "304 Not Modified"){
-			return [];
-		} else {
+		if(events.meta.status === "200 OK"){
 			Devs.update({username: user}, {$set: {etag: events.meta.etag}});
+			return events.filter(function(el){ return GHApi.isContribution(el) });
 		}
-		return events.filter(function(el){ return GHApi.isContribution(el) });
+		return [];
 	}	
 }
