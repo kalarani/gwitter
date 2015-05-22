@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "6556e2a62a40c21442a6af98354f80ec963529af"
+                  "value": "d8aa06f74220a45ec8ac37a55c5b1077b8e3b046"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7854,7 +7854,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "cefb7a8b101a07eed02fecbfa10b9fc29ca6deef"
+          "value": "79ea0ac353c94e502fb37b0f612cf7952e6de8d3"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -8799,6 +8799,11 @@ var packageMetadata = {
           "type": "function"
         }
       }
+    }
+  },
+  "chfritz:easycron": {
+    "Cron": {
+      "type": "function"
     }
   },
   "session": {},
