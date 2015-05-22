@@ -5,13 +5,3 @@
 <body>
 	{{> contributions}}
 </body>
-
-<template name="contributions">
-	{{#each contributions}}
-		{{> contribution}}
-	{{/each}}
-</template>
-
-<template name="contribution">
-	<li>{{actor.login}} {{payload.action}} a {{type}} to {{repo.name}} on {{created_at}}</li>
-</template>
