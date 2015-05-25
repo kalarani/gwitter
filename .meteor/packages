@@ -13,3 +13,4 @@ bruz:github-api
 velocity:console-reporter
 percolate:migrations
 chfritz:easycron
+twbs:bootstrap
