@@ -1,9 +1,11 @@
 <template name="contributions">
+	<div class="list-group">
 	{{#each contributions}}
 		{{> contribution}}
 	{{/each}}
+	</div>
 </template>
 
 <template name="contribution">
-	<li>{{actor.login}} {{payload.action}} a {{type}} to {{repo.name}} on {{created_at}}</li>
+	<div class="list-group-item">{{actor.login}} {{payload.action}} a {{type}} to <a href="{{getHtmlUrl}}">{{repo.name}}</a> on {{created_at}}</div>
 </template>
