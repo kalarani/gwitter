@@ -6,7 +6,6 @@ Template.contributions.helpers({
 
 Template.contribution.helpers({
 	getHtmlUrl: function(){
-		console.log("this");
 		if(this.type == "PullRequestEvent") {
 			return this.payload.pull_request.html_url;
 		}

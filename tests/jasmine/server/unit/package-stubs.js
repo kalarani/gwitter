@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "0aa90e5b11cbecf84d2a148eccbd2836197da271"
+                  "value": "09bba578aee8ec3b12d1c6b8b58c88420d03b2ae"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7834,6 +7834,9 @@ var packageMetadata = {
                 },
                 "deny": {
                   "type": "function"
+                },
+                "helpers": {
+                  "type": "function"
                 }
               }
             }
@@ -7854,7 +7857,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "1cb85e47ecd9da83be1db05f954865fb94d720d3"
+          "value": "f5dbae577d0b6925d741325fd530a547ab91352e"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -8466,6 +8469,9 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "helpers": {
+          "type": "function"
         }
       }
     },
@@ -8500,6 +8506,9 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "helpers": {
           "type": "function"
         }
       }
@@ -8536,6 +8545,9 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "helpers": {
+          "type": "function"
         }
       }
     },
@@ -8570,6 +8582,9 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "helpers": {
           "type": "function"
         }
       }
@@ -8606,6 +8621,9 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "helpers": {
+          "type": "function"
         }
       }
     },
@@ -8640,6 +8658,9 @@ var packageMetadata = {
           "type": "function"
         },
         "deny": {
+          "type": "function"
+        },
+        "helpers": {
           "type": "function"
         }
       }
@@ -8676,6 +8697,9 @@ var packageMetadata = {
         },
         "deny": {
           "type": "function"
+        },
+        "helpers": {
+          "type": "function"
         }
       }
     }
@@ -8710,7 +8734,127 @@ var packageMetadata = {
       "type": "object",
       "members": {
         "karmaChilds": {
-          "type": "object"
+          "type": "object",
+          "members": {
+            "jasmine-client-unit": {
+              "type": "object",
+              "members": {
+                "taskName": {
+                  "type": "constant",
+                  "value": "jasmine-client-unit"
+                },
+                "appPath": {
+                  "type": "constant",
+                  "value": "/Users/kalarani/PlayGround/GithubApi/gwitter"
+                },
+                "pid": {
+                  "type": "constant",
+                  "value": 59842
+                },
+                "fout": {
+                  "type": "constant",
+                  "value": 38
+                },
+                "child": {
+                  "type": "object",
+                  "members": {
+                    "domain": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "signalCode": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "exitCode": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "pid": {
+                      "type": "constant",
+                      "value": 59842
+                    },
+                    "stdin": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stdout": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stderr": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stdio": {
+                      "type": "array"
+                    },
+                    "spawn": {
+                      "type": "function"
+                    },
+                    "kill": {
+                      "type": "function"
+                    },
+                    "ref": {
+                      "type": "function"
+                    },
+                    "unref": {
+                      "type": "function"
+                    },
+                    "setMaxListeners": {
+                      "type": "function"
+                    },
+                    "emit": {
+                      "type": "function"
+                    },
+                    "addListener": {
+                      "type": "function",
+                      "refID": 17
+                    },
+                    "on": {
+                      "ref": 17
+                    },
+                    "once": {
+                      "type": "function"
+                    },
+                    "removeListener": {
+                      "type": "function"
+                    },
+                    "removeAllListeners": {
+                      "type": "function"
+                    },
+                    "listeners": {
+                      "type": "function"
+                    }
+                  }
+                },
+                "getTaskName": {
+                  "type": "function"
+                },
+                "getChild": {
+                  "type": "function"
+                },
+                "getPid": {
+                  "type": "function"
+                },
+                "isDead": {
+                  "type": "function"
+                },
+                "isRunning": {
+                  "type": "function"
+                },
+                "readPid": {
+                  "type": "function"
+                },
+                "spawn": {
+                  "type": "function"
+                },
+                "kill": {
+                  "type": "function"
+                }
+              }
+            }
+          }
         },
         "getKarmaChild": {
           "type": "function"
@@ -8807,6 +8951,7 @@ var packageMetadata = {
     }
   },
   "twbs:bootstrap": {},
+  "dburles:collection-helpers": {},
   "session": {},
   "livedata": {
     "DDP": {

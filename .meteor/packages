@@ -14,3 +14,4 @@ velocity:console-reporter
 percolate:migrations
 chfritz:easycron
 twbs:bootstrap
+dburles:collection-helpers

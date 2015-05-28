@@ -4,7 +4,7 @@ describe("contributions", function(){
 		Template.contributions.__helpers[' contributions']();
 		expect(Contributions.find).toHaveBeenCalledWith({}, {sort: {created_at: -1}})
 	});
-})
+});
 
 describe("url for", function(){
 	it("push event should point to the first commit", function(){
@@ -22,4 +22,4 @@ describe("url for", function(){
 		var url = Template.contribution.__helpers[' getHtmlUrl'].call(push_event);
 		expect(url).toBe("url_to_issue");
 	});
-})
+});

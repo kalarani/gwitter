@@ -1,5 +1,4 @@
 Devs = new Mongo.Collection("Developers");
-Contributions = new Mongo.Collection("Contributions");
 
 if (Meteor.isClient) {
 }
