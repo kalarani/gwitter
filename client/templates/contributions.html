@@ -7,5 +7,9 @@
 </template>
 
 <template name="contribution">
-	<div class="list-group-item">{{actor.login}} {{payload.action}} a {{type}} to <a href="{{getHtmlUrl}}">{{repo.name}}</a> on {{created_at}}</div>
+	<div class="list-group-item">
+		<p>{{actor.login}} {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a></p>
+		<a href="{{event.htmlUrl}}">short url</a>
+		on {{created_at}}
+	</div>
 </template>

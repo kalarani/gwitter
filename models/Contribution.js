@@ -39,5 +39,9 @@ Contributions.helpers({
 			return new IssuesEvent(this.payload);
 		}
 		return new PushEvent(this.payload);
+	},
+	
+	repoUrl: function(){
+		return this.repo.url.replace("api.", "").replace("repos/", "");
 	}
 });

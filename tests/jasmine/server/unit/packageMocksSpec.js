@@ -7086,7 +7086,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "09bba578aee8ec3b12d1c6b8b58c88420d03b2ae"
+                  "value": "de471bb8e4b69a3339c855caf13f0edfbd621025"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7210,7 +7210,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 1
+              "value": 2
             },
             "timeout": {
               "type": "constant",
@@ -7858,7 +7858,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "f5dbae577d0b6925d741325fd530a547ab91352e"
+          "value": "864a1f8ef55df6d812e45121f86dfdfb67380d77"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -8750,11 +8750,11 @@ var packageMetadata = {
                 },
                 "pid": {
                   "type": "constant",
-                  "value": 59842
+                  "value": 61535
                 },
                 "fout": {
                   "type": "constant",
-                  "value": 38
+                  "value": 40
                 },
                 "child": {
                   "type": "object",
@@ -8773,7 +8773,7 @@ var packageMetadata = {
                     },
                     "pid": {
                       "type": "constant",
-                      "value": 59842
+                      "value": 61535
                     },
                     "stdin": {
                       "type": "null",

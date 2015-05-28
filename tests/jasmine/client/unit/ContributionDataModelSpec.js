@@ -9,4 +9,14 @@ describe("Contribution model", function(){
 		contribution.type = "IssuesEvent";
 		expect(contribution.event()).toEqual(new IssuesEvent({}));
 	});
+	
+	it("should return the repo url", function(){
+		var contribution = Contributions._transform({"repo": {
+	      "id": 32314201,
+	      "name": "njupiter/njupiter",
+	      "url": "https://api.github.com/repos/njupiter/njupiter"
+	    }});
+	
+		expect(contribution.repoUrl()).toBe("https://github.com/njupiter/njupiter");
+	});
 });
