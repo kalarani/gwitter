@@ -52,7 +52,6 @@ resetDatabase = function () {
  
 loadDefaultFixtures = function () {
   console.log('Loading default fixtures');
-  Devs.insert({username: "kalarani", etag:""});
   console.log('Finished loading default fixtures');
 };
  

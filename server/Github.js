@@ -4,8 +4,8 @@ GHApi = {
 		return isCreateIssueEvent || ["PushEvent", "PullRequestEvent"].indexOf(event.type) >= 0;
 	},
 
-	getPublicEventsFor: function(dev){
-		var gh = new GitHub({
+	gh: function(){
+		return new GitHub({
 		    version: "3.0.0",
 		    debug: true,
 		    protocol: "https",
@@ -15,7 +15,10 @@ GHApi = {
 				"user-agent": "gwitter"
 			}
 		});
-		return gh.events.getFromUserPublic({
+	},
+
+	getPublicEventsFor: function(dev){
+		return GHApi.gh.events.getFromUserPublic({
 			user: dev.username,
 			headers: {
 				"if-none-match": dev.etag
@@ -40,5 +43,16 @@ GHApi = {
 			return contributions;
 		}
 		return [];
-	}	
+	},
+
+	getPublicMembersOf: function(orgName){
+		console.log(GHApi.gh);
+		var members = GHApi.gh().orgs.getMembers({
+			org: orgName
+		});
+		members.forEach(function(m){
+			Devs.upsert({username: m.login}, {});
+		});
+		return members;
+	}
 }
