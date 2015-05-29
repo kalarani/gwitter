@@ -1,5 +1,5 @@
 describe("Pull request model", function(){
-	var push_event = new PullRequestEvent({
+	var pullRequestEvent = new PullRequestEvent({
       "action": "opened",
       "number": 3,
       "pull_request": {
@@ -13,12 +13,12 @@ describe("Pull request model", function(){
     });
 
 	it("should return a html url for the pull request", function(){
-		var htmlUrl = push_event.htmlUrl();
+		var htmlUrl = pullRequestEvent.htmlUrl();
 		expect(htmlUrl).toBe("https://github.com/paralin/meteor-pnotify/pull/3");
 	});
 	
 	it("should return a generic message for the pull request", function(){
-		var message = push_event.message();
+		var message = pullRequestEvent.message();
 		expect(message).toBe("opened a pull request");
 	})
 });

@@ -28,17 +28,16 @@ GHApi = {
 		var events = GHApi.getPublicEventsFor(dev);
 		if(events.meta.status === "200 OK"){
 			Devs.update({username: user}, {$set: {etag: events.meta.etag}});
-			var contributions = events.filter(function(el){ return GHApi.isContribution(el) });
-			var last_synced_event = Contributions.findOne({actor: {login: user}}, {sort: {created_at: -1}});
-			var latest_contributions = contributions;
-			if(last_synced_event !== undefined){
-				var last_synced_event_date = last_synced_event.created_at;
-				latest_contributions = contributions.filter(function(c){ return c.created_at > last_synced_event_date});
+			var contributions = events.filter(function(el){ return GHApi.isContribution(el); });
+			var lastSyncedEvent = Contributions.findOne({actor: {login: user}}, {sort: {created_at: -1}});
+			if(lastSyncedEvent !== undefined){
+				var lastSyncedEvent_date = lastSyncedEvent.created_at;
+				contributions = contributions.filter(function(c){ return c.created_at > lastSyncedEvent_date});
 			}
-			latest_contributions.forEach(function(contribution){
+			contributions.forEach(function(contribution){
 				Contributions.insert(contribution);
 			});
-			return latest_contributions;
+			return contributions;
 		}
 		return [];
 	}	

@@ -1,5 +1,5 @@
 describe("Push event model", function(){
-	var push_event = new PushEvent({
+	var pushEvent = new PushEvent({
       "push_id": 664604403,
       "size": 1,
       "distinct_size": 1,
@@ -21,16 +21,16 @@ describe("Push event model", function(){
     });
 
 	it("should return a html url for the commit", function(){
-		var htmlUrl = push_event.htmlUrl();
+		var htmlUrl = pushEvent.htmlUrl();
 		expect(htmlUrl).toBe("https://github.com/kalarani/YDeliver/commits/2b5b200b62b58caaa16f7bb694147c1ee49259c3");
 	});
 	
 	it("should return the message with number of commits included", function(){
-		var message = push_event.message();
+		var message = pushEvent.message();
 		expect(message).toBe("pushed 1 commit");
 		
-		push_event.payload["commits"].push({ "sha": "2b5b200b62b58caaa16f7bb694147c1ee235469c3"});
-		message = push_event.message();
+		pushEvent.payload["commits"].push({ "sha": "2b5b200b62b58caaa16f7bb694147c1ee235469c3"});
+		message = pushEvent.message();
 		expect(message).toBe("pushed 2 commits");
 	})
 });
