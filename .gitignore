@@ -1,1 +1,2 @@
 **/.DS_Store
+tests/jasmine/server/unit/package*.js
