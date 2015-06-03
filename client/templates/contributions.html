@@ -12,10 +12,7 @@
 		<span class="title">
 			<a href="{{this.user.htmlUrl}}">{{actor.login}}</a> {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a>
 		</span>
-		<p>
-			<a href="{{event.htmlUrl}}">short url</a>
-			<br>
-			on {{created_at}}
-		</p>
+		<a href="{{event.htmlUrl}}">short url</a>
+		<span class="right">{{formattedCreatedTime}}</span>
 	</li>
 </template>
