@@ -1,15 +1,21 @@
 <template name="contributions">
-	<div class="list-group">
+	<ul class="collection">
 	{{#each contributions}}
 		{{> contribution}}
 	{{/each}}
-	</div>
+	</ul>
 </template>
 
-<template name="contribution">
-	<div class="list-group-item">
-		<p>{{actor.login}} {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a></p>
-		<a href="{{event.htmlUrl}}">short url</a>
-		on {{created_at}}
-	</div>
+<template name="contribution"> 
+	<li class="collection-item avatar">
+		<img src="{{this.user.avatarUrl}}" alt="" class="circle">
+		<span class="title">
+			<a href="{{this.user.htmlUrl}}">{{actor.login}}</a> {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a>
+		</span>
+		<p>
+			<a href="{{event.htmlUrl}}">short url</a>
+			<br>
+			on {{created_at}}
+		</p>
+	</li>
 </template>

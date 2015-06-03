@@ -43,5 +43,9 @@ Contributions.helpers({
 	
 	repoUrl: function(){
 		return this.repo.url.replace("api.", "").replace("repos/", "");
-	}
+	},
+
+  user: function(){
+    return Devs.findOne({username: this.actor.login}) || {};
+  }
 });

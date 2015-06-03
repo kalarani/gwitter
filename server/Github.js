@@ -50,7 +50,7 @@ GHApi = {
 			org: orgName
 		});
 		members.forEach(function(m){
-			Devs.upsert({username: m.login}, {$set: {username: m.login}});
+			Devs.upsert({username: m.login}, {$set: {username: m.login, avatarUrl: m.avatar_url, htmlUrl: m.html_url}});
 		});
 		return members;
 	}
