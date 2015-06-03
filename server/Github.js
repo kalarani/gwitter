@@ -18,7 +18,7 @@ GHApi = {
 	},
 
 	getPublicEventsFor: function(dev){
-		return GHApi.gh.events.getFromUserPublic({
+		return GHApi.gh().events.getFromUserPublic({
 			user: dev.username,
 			headers: {
 				"if-none-match": dev.etag
@@ -46,12 +46,11 @@ GHApi = {
 	},
 
 	getPublicMembersOf: function(orgName){
-		console.log(GHApi.gh);
 		var members = GHApi.gh().orgs.getMembers({
 			org: orgName
 		});
 		members.forEach(function(m){
-			Devs.upsert({username: m.login}, {});
+			Devs.upsert({username: m.login}, {$set: {username: m.login}});
 		});
 		return members;
 	}
