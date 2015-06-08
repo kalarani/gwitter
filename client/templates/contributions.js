@@ -7,7 +7,6 @@ Template.contributions.helpers({
 Template.contribution.helpers({
 	formattedCreatedTime: function(){
 		var fCT = strftime('%B %d, %Y %H:%M', new Date(this.created_at));
-		console.log(fCT);
 		return fCT;
 	}
 });
