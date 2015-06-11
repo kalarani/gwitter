@@ -13,3 +13,4 @@ percolate:migrations
 chfritz:easycron
 dburles:collection-helpers
 materialize:materialize
+d3js:d3
