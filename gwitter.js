@@ -1,4 +1,5 @@
 Devs = new Mongo.Collection("Developers");
+Pages = new Meteor.Pagination(Contributions, {templateName: "contributions", itemTemplate: "contribution", infinite: true, sort: {created_at: -1}});
 
 if (Meteor.isClient) {
 	Meteor.subscribe('contributions');
