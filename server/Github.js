@@ -1,7 +1,8 @@
 GHApi = {
 	isContribution: function(event){
 		var isCreateIssueEvent = event.type === "IssuesEvent" && event.payload.action === "opened";
-		return isCreateIssueEvent || ["PushEvent", "PullRequestEvent"].indexOf(event.type) >= 0;
+		var isPushEvent = event.type === "PushEvent" && event.repo.name.indexOf("github.io") < 0;
+		return isCreateIssueEvent || isPushEvent || event.type === "PullRequestEvent";
 	},
 
 	gh: function(){
