@@ -1,8 +1,9 @@
 Devs = new Mongo.Collection("Developers");
-Pages = new Meteor.Pagination(Contributions, {templateName: "contributions", itemTemplate: "contribution", infinite: true, sort: {created_at: -1}});
+// Pages = new Meteor.Pagination(Contributions, {templateName: "contributions", itemTemplate: "contribution", infinite: true, sort: {created_at: -1}});
 
 if (Meteor.isClient) {
 	Meteor.subscribe('contributions');
+	Meteor.subscribe('developers');
 }
 
 if (Meteor.isServer) {
@@ -19,5 +20,8 @@ if (Meteor.isServer) {
 
   Meteor.publish('contributions', function() {
    return Contributions.find({}, {sort: {created_at: -1}});
+  });
+  Meteor.publish('developers', function(id){
+  	return Devs.find({});
   });
 }

@@ -46,6 +46,7 @@ Contributions.helpers({
 	},
 
   user: function(){
-    return Devs.findOne({username: this.actor.login}) || {};
+    var dev = Devs.findOne({username: this.actor["login"]});
+    return dev || {};
   }
 });

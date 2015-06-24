@@ -1,16 +1,19 @@
 <template name="contributions">
-	{{> pagesNav}}
+	<!-- {{> pagesNav}} -->
 
 	<ul class="collection">
-	{{> pages}}
+		{{#each contributions}}
+		 {{> contribution}}
+		{{/each}}
+	<!-- {{> pages}} -->
 	</ul>
 </template>
 
 <template name="contribution"> 
 	<li class="collection-item avatar">
-		<img src="{{this.user.avatarUrl}}" alt="" class="circle">
+		<img src="{{user.avatarUrl}}" alt="" class="circle">
 		<span class="title">
-			<a href="{{this.user.htmlUrl}}">{{actor.login}}</a> {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a>
+			<a href="{{user.htmlUrl}}">{{actor.login}}</a> {{event.message}} to <a href="{{repoUrl}}">{{repo.name}}</a>
 		</span>
 		<a href="{{event.htmlUrl}}">short url</a>
 		<span class="right">{{formattedCreatedTime}}</span>
